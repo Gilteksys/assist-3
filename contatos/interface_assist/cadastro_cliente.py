@@ -39,6 +39,10 @@ class CadastroClienteWindow(QMainWindow):
         button.clicked.connect(self.on_create_cliente_clicked)
         layout.addWidget(button)
 
+        exit_button = QPushButton("Sair")
+        exit_button.clicked.connect(self.close)
+        layout.addWidget(exit_button)
+
         self.network_manager = QNetworkAccessManager(self)
 
     def on_create_cliente_clicked(self):

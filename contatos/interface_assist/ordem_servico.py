@@ -7,7 +7,7 @@ class OrdemServicoWindow(QMainWindow):
         super().__init__()
 
         self.setWindowTitle("Ordem de Serviço")
-        self.setGeometry(100, 100, 400, 200)
+        self.setGeometry(100, 100, 1000, 700)
 
         main_widget = QWidget()
         self.setCentralWidget(main_widget)
@@ -47,6 +47,10 @@ class OrdemServicoWindow(QMainWindow):
         button = QPushButton("Criar Ordem de Serviço")
         button.clicked.connect(self.on_create_ordem_servico_clicked)
         layout.addWidget(button)
+
+        exit_button = QPushButton("Sair")
+        exit_button.clicked.connect(self.close)
+        layout.addWidget(exit_button)
 
         self.network_manager = QNetworkAccessManager(self)
 
